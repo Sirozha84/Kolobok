@@ -1,3 +1,13 @@
+'Подготовка экрана
+sub ScreenClear()
+	poke 23561,10
+	poke 23562,1
+	poke 23693,7
+	paper 0
+	border 0
+	cls
+end sub
+
 'Рисование уровня
 sub DrawLevel(m() as byte)
 	SetFont(1)
@@ -34,6 +44,13 @@ sub DrawKolobok(x as byte, y as byte, n as byte, a as byte)
 end sub
 
 'Рисование двери
-sub DrawDoor(x as byte, y as byte)
-	print ink 6; at y * 2, x * 2; "!!"; y * 2 + 1, x * 2; "!!"
+'sub DrawDoor(x as byte, y as byte)
+'	print ink 6; at y * 2, x * 2; "!!"; y * 2 + 1, x * 2; "!!"
+'end sub
+
+sub DrawCoin(x as ubyte, y as ubyte, a as ubyte)
+	if a = 0 then print ink 6; bright 1; at y * 2, x * 2; "KL"; at y * 2 + 1, x * 2; "kl"
+	if a = 1 then print ink 6; at y * 2, x * 2; "MN"; at y * 2 + 1, x * 2; "mn"
+	if a = 2 then print ink 6; at y * 2, x * 2; "OP"; at y * 2 + 1, x * 2; "op"
+	if a = 3 then print ink 6; at y * 2, x * 2; "MN"; at y * 2 + 1, x * 2; "mn"
 end sub
