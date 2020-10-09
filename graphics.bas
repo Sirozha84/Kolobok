@@ -43,14 +43,18 @@ sub DrawKolobok(x as byte, y as byte, n as byte, a as byte)
 	'SetFont(0):print at 22,0;a
 end sub
 
-'Рисование двери
-'sub DrawDoor(x as byte, y as byte)
-'	print ink 6; at y * 2, x * 2; "!!"; y * 2 + 1, x * 2; "!!"
-'end sub
-
+'Рисование монетки
 sub DrawCoin(x as ubyte, y as ubyte, a as ubyte)
 	if a = 0 then print ink 6; bright 1; at y * 2, x * 2; "KL"; at y * 2 + 1, x * 2; "kl"
 	if a = 1 then print ink 6; at y * 2, x * 2; "MN"; at y * 2 + 1, x * 2; "mn"
 	if a = 2 then print ink 6; at y * 2, x * 2; "OP"; at y * 2 + 1, x * 2; "op"
 	if a = 3 then print ink 6; at y * 2, x * 2; "MN"; at y * 2 + 1, x * 2; "mn"
+end sub
+
+'Рисование ключа
+sub DrawKey(x as ubyte, y as ubyte, a as ubyte)
+	if a = 0 then print ink 6; at y * 2, x * 2; "QR"; at y * 2 + 1, x * 2; "qr"
+	if a = 1 then print ink 6; bright 1; at y * 2, x * 2; "QR"; bright 0; at y * 2 + 1, x * 2; "qr"
+	if a = 2 then print ink 6; bright 1; at y * 2, x * 2; "QR"; at y * 2 + 1, x * 2; "qr"
+	if a = 3 then print ink 6; at y * 2, x * 2; "QR"; bright 1; at y * 2 + 1, x * 2; "qr"
 end sub
